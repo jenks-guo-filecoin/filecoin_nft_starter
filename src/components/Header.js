@@ -1,5 +1,5 @@
 import React from "react";
-import nftHackLogo from "../assets/nfthack-logo.svg";
+import nftHackLogo from "../assets/logo-nft.storage.svg";
 
 const Header = () => {
   return (
@@ -15,9 +15,9 @@ const Header = () => {
           src={nftHackLogo}
         ></img>
       </a>
-      <p className="header gradient-text">NFTHack NFT Collection</p>
+      <p className="header gradient-text">FVM NFT Collection</p>
       <p className="sub-text">
-        100 personalised NFTs for Filecoin @ EthGlobal NFTHack 2022
+       100x personalised NFT Collection on FVM hypserspace network.
       </p>
     </>
   );

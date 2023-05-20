@@ -80,9 +80,9 @@ const App = () => {
     // console.log("Connected to chain " + chainId);
 
     // // String, hex code of the chainId of the Rinkebey test network
-    // const rinkebyChainId = "0x4";
-    // if (chainId !== rinkebyChainId) {
-    //   alert("You are not connected to the Rinkeby Test Network!");
+    // const HYPERSPACEChainId = "0x4";
+    // if (chainId !== HYPERSPACEChainId) {
+    //   alert("You are not connected to the HYPERSPACE Test Network!");
     // }
   };
 
@@ -170,7 +170,7 @@ const App = () => {
           dataCollection.map(async (el) => {
             console.log("elementinURL", el)
             let link = el[1].split("/");
-            let fetchURL = `https://${link[2]}.ipfs.dweb.link/${link[3]}`;
+            let fetchURL = `https://${link[2]}.ipfs.nftstorage.link/${link[3]}`;
             console.log("fetchURL", fetchURL);
             const response = await fetch(fetchURL, {
               method : "GET",
@@ -211,7 +211,7 @@ const App = () => {
         <div className="nft-viewer-container">
           {recentlyMinted.map((el, idx) => {
             let linkArr = el.image.split("/");
-            let link = `https://${linkArr[2]}.ipfs.dweb.link/${linkArr[3]}`;
+            let link = `https://${linkArr[2]}.ipfs.nftstorage.link/${linkArr[3]}`;
             return (
               <div className="nft-viewer-column" key={idx}>
                 {renderImagePreview(link)}
@@ -268,7 +268,7 @@ const App = () => {
           );
           console.log(
             "image view set",
-            `https://${imgViewArray[2]}.ipfs.dweb.link/${imgViewArray[3]}`
+            `https://${imgViewArray[2]}.ipfs.nftstorage.link/${imgViewArray[3]}`
           );
           // const status = await client.status(metadata.ipnft);
           // console.log("status", status);
@@ -312,8 +312,8 @@ const App = () => {
             setLinksObj({
               ...linksObj,
               opensea: `https://testnets.opensea.io/assets/${CONTRACT_ADDRESS}/${tokenId.toNumber()}`,
-              rarible: `https://rinkeby.rarible.com/token/${CONTRACT_ADDRESS}:${tokenId.toNumber()}`,
-              etherscan: `https://rinkeby.etherscan.io/tx/${nftTxn.hash}`,
+              rarible: `https://HYPERSPACE.rarible.com/token/${CONTRACT_ADDRESS}:${tokenId.toNumber()}`,
+              etherscan: `https://explorer.glif.io/tx/${nftTxn.hash}/?network=hyperspacenet`,
             });
           }
         );
@@ -436,11 +436,7 @@ const App = () => {
           renderLink(imageView, "See IPFS image link")}
         {imageView && renderImagePreview(imageView)}
         {linksObj.etherscan &&
-          renderLink(linksObj.etherscan, "See your Transaction on Etherscan")}
-        {linksObj.opensea &&
-          renderLink(linksObj.opensea, "See your NFT on OpenSea")}
-        {linksObj.rarible &&
-          renderLink(linksObj.rarible, "See your NFT on Rarible")}
+          renderLink(linksObj.etherscan, "See your Transaction on Glif Scanner")}
         {currentAccount === "" ? (
           renderNotConnectedContainer()
         ) : transactionState.loading ? (

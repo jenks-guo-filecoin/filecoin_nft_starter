@@ -23,8 +23,8 @@ Ways to save your NFT SVG
 Run contract: npx hardhat
 
 > run scripts/run.js  
-> Deploy contract to rinkeby:
-> npx hardhat run scripts/deploy.js --network rinkeby
+> Deploy contract to HYPERSPACE:
+> npx hardhat run scripts/deploy.js --network HYPERSPACE
 
 Running the front end localy (host on Fleek)
 npm install && npm start
@@ -70,9 +70,9 @@ Sign up for Moralis and get a QuickNode
 Add it to hardhat config
 Sign up for etherscan / get an API key & add it to hardhat.config
 networks: {
-rinkeby: {
-url: process.env.MORALIS_RINKEBY_API_URL,
-accounts: [process.env.METAMASK_RINKEBY_PRIVATE_KEY],
+HYPERSPACE: {
+url: process.env.MORALIS_HYPERSPACE_API_URL,
+accounts: [process.env.METAMASK_HYPERSPACE_PRIVATE_KEY],
 },
 },
 etherscan: {
@@ -81,7 +81,7 @@ etherscan: {
 apiKey: process.env.ETHERSCAN_API_KEY,
 }
 
-> npx hardhat run scripts/deploy.js --network rinkeby
+> npx hardhat run scripts/deploy.js --network HYPERSPACE
 
 Tasks - development of front end
 
@@ -97,4 +97,4 @@ Resources
 - Read the IPFS best practice guide for NFT's https://docs.ipfs.io/how-to/mint-nfts-with-ipfs/#a-short-introduction-to-nfts
 - See the NFT.School guide https://nftschool.dev/
 - Public Gateway status checker: https://ipfs.github.io/public-gateway-checker/
-- Faucets for rinkeby eth:
+- Faucets for HYPERSPACE eth:
